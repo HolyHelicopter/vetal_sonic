@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Boba TCG</title>
+    <title>SANIC</title>
 
     <style>
         body,
@@ -26,9 +26,11 @@
         position: relative;
         background-color: transparent;
     ">
-        <img id="sonic" src="sonic.png" style="
-            height: 70px;
+        <img id="sonic" src="sonic-running.gif" style="
+            height: 53px;
             position: absolute;
+            top: 10px;
+            transition: left 0.5s;
         ">
     </div>
 
@@ -48,6 +50,16 @@
                     left_for_sonic = left_for_sonic + 'px';
 
                     $('#sonic').css('left', left_for_sonic);
+
+                    if (total_completed >= 350) {
+                        $('#sonic').css('height', '60px');
+                        $('#sonic').css('top', '3px');
+                        $('#sonic').attr('src', 'sonic-super.png');
+                    } else {
+                        $('#sonic').css('height', '53px');
+                        $('#sonic').css('top', '10px');
+                        $('#sonic').attr('src', 'sonic-running.gif');
+                    }
                 }
             );
 
